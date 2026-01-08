@@ -4,7 +4,7 @@ use anchor_lang::prelude::*;
 #[cfg(test)]
 mod tests;
 
-declare_id!("91Gf7i7ByfTkm7zp11Q7ifbWFv3NfEfPv6ibiQpxsWwa");
+declare_id!("HHePm6NmjHDi4HzrUTtqhReNFftabSxcNJfDv7AZy2YU");
 
 #[program]
 pub mod crud {
