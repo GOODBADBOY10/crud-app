@@ -1,4 +1,4 @@
-# Anchor Vault Program
+# Anchor Crud Program
 
 This template includes a simple SOL vault program built with [Anchor](https://www.anchor-lang.com/).
 
@@ -20,21 +20,21 @@ To deploy your own version of the program:
 
 ```bash
 cd anchor
-solana-keygen new -o target/deploy/vault-keypair.json
+solana-keygen new -o target/deploy/crud-keypair.json
 ```
 
 ### 2. Get the new program ID
 
 ```bash
-solana address -k target/deploy/vault-keypair.json
+solana address -k target/deploy/crud-keypair.json
 ```
 
 ### 3. Update the program ID
 
 Update the program ID in these files:
 
-- `anchor/Anchor.toml` - Update `vault = "..."` under `[programs.devnet]`
-- `anchor/programs/vault/src/lib.rs` - Update `declare_id!("...")`
+- `anchor/Anchor.toml` - Update `crud = "..."` under `[programs.devnet]`
+- `anchor/programs/crud/src/lib.rs` - Update `declare_id!("...")`
 
 ### 4. Build and deploy
 
@@ -56,7 +56,7 @@ cd ..
 npm run codama:js
 ```
 
-This updates the generated client code in `app/generated/vault/` with your new program ID.
+This updates the generated client code in `app/generated/crud/` with your new program ID.
 
 ## Program Overview
 
