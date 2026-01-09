@@ -10,4 +10,8 @@ declare_id!("qZrh75prvjbrEaPRGcqHRXFzuRUmZca9uaHTEnhvRFe");
 pub mod crud {
     use super::*;
 
+    pub fn initialize_crud() -> Result<()> {
+        Ok(())
+    }
+
 }
