@@ -23,3 +23,10 @@ pub struct InitializeCrud {
     pub user: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
+
+
+#[account]
+pub struct Crud {
+    pub title: String,
+    pub description: String,
+}
