@@ -5,7 +5,7 @@ resolution = true
 skip-lint = false
 
 [programs.devnet]
-crud = "3Q5V9DHUBvCZCocxDUv7gphPyXu6bZCeq97tjqjaQ5tu"
+crud = "2rMvvFmGX97VYJWFTpnVgrGGptBvCcXBrGEd3BjtALXf"
 
 [registry]
 url = "https://api.apr.dev"
