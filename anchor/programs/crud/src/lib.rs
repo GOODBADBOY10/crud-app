@@ -15,3 +15,6 @@ pub mod crud {
     }
 
 }
+
+#[derive(Accounts)]
+pub struct InitializeCrud {}
