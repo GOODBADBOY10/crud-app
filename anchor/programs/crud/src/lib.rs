@@ -10,19 +10,17 @@ declare_id!("2rMvvFmGX97VYJWFTpnVgrGGptBvCcXBrGEd3BjtALXf");
 pub mod crud {
     use super::*;
 
-    pub fn initialize_crud() -> Result<()> {
+    pub fn initialize_crud(ctx: Context<InitializeCrud>) -> Result<()> {
         Ok(())
     }
-
 }
 
 #[derive(Accounts)]
-pub struct InitializeCrud {
+pub struct InitializeCrud<'info> {
     #[account(mut)]
     pub user: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
-
 
 #[account]
 #[derive(InitSpace)]
