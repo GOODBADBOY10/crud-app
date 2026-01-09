@@ -17,7 +17,6 @@ pub mod crud {
 }
 
 #[derive(Accounts)]
-#[derive(InitSpace)]
 pub struct InitializeCrud {
     #[account(mut)]
     pub user: Signer<'info>,
@@ -26,7 +25,10 @@ pub struct InitializeCrud {
 
 
 #[account]
+#[derive(InitSpace)]
 pub struct Crud {
+    #[max_len(20)]
     pub title: String,
+    #[max_len(50)]
     pub description: String,
 }
