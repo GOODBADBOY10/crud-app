@@ -11,8 +11,6 @@ declare_id!("2rMvvFmGX97VYJWFTpnVgrGGptBvCcXBrGEd3BjtALXf");
 
 #[program]
 pub mod crud {
-    use solana_sdk::message;
-
     use super::*;
 
     pub fn create_journal_entry(
@@ -32,7 +30,7 @@ pub struct CreateEntry<'info> {
         init, 
         seeds = [title.as_bytes(), owner.key().as_ref()],
         bump,
-        space = 8 + JournalEntrySpace::INIT_SPACE
+        space = 8 + JournalEntrySpace::INIT_SPACE,
         payer = owner, 
     )]
     pub journal_entry: Account<'info, JournalEntrySpace>,
