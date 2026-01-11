@@ -22,7 +22,13 @@ pub mod crud {
 
 
 #[derive(Accounts)]
-pub struct CreateEntry<'info> {}
+pub struct CreateEntry<'info> {
+    #[account(init, payer = user, space = 8 + JournalEntrySpace::INIT_SPACE)]
+    pub journal_entry: Account<'info, JournalEntrySpace>,
+    #[account(mut)]
+    pub user: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
 
 
 
