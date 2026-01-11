@@ -25,13 +25,15 @@ pub mod crud {
 pub struct CreateEntry<'info> {
     #[account(
         init, 
-        payer = user, 
+        seeds = [title.as_bytes(), owner.key().as_ref()],
+        bump,
         space = 8 + JournalEntrySpace::INIT_SPACE
+        payer = owner, 
     )]
     pub journal_entry: Account<'info, JournalEntrySpace>,
     
     #[account(mut)]
-    pub user: Signer<'info>,
+    pub owner: Signer<'info>,
 
     pub system_program: Program<'info, System>,
 }
