@@ -18,6 +18,10 @@ pub mod crud {
         title: String,
         message: String,
     ) -> Result<()>{
+        let journal_entry = &mut ctx.accounts.journal_entry;
+        journal_entry.owner = *ctx.accounts.owner.key;
+        journal_entry.title = title;
+        journal_entry.message = message;
         Ok(())
     }
 }
