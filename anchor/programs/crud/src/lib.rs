@@ -15,6 +15,7 @@ pub mod crud {
 
     pub fn create_journal_entry(
         ctx: Context<CreateEntry>,
+        title: String,
     ) -> Result<()>{
         Ok(())
     }
@@ -22,6 +23,7 @@ pub mod crud {
 
 
 #[derive(Accounts)]
+#[instruction(title: String)]
 pub struct CreateEntry<'info> {
     #[account(
         init, 
