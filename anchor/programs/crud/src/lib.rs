@@ -34,6 +34,12 @@ pub mod crud {
         journal_entry.message = message;
         Ok(())
     }
+
+    pub fn delete_journal_entry(
+        ctx: Context<DeleteEntry>,
+    ) -> Result<()> {
+        Ok(())
+    }
 }
 
 
@@ -70,6 +76,10 @@ pub struct UpdateEntry<'info> {
     pub owner: Signer<'info>,
     pub system_program: Program<'info, System>,
 }
+
+#[derive(Accounts)]
+#[instruction(title: String)]
+pub struct DeleteEntry<'info> {}
 
 
 
