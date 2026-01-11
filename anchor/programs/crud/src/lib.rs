@@ -81,6 +81,7 @@ pub struct UpdateEntry<'info> {
 #[instruction(title: String)]
 pub struct DeleteEntry<'info> {
     #[account(
+        mut,
         close = owner,
         seeds = [title.as_bytes(), owner.key().as_ref()],
         bump,
