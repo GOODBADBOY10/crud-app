@@ -11,11 +11,14 @@ declare_id!("2rMvvFmGX97VYJWFTpnVgrGGptBvCcXBrGEd3BjtALXf");
 
 #[program]
 pub mod crud {
+    use solana_sdk::message;
+
     use super::*;
 
     pub fn create_journal_entry(
         ctx: Context<CreateEntry>,
         title: String,
+        message: String,
     ) -> Result<()>{
         Ok(())
     }
