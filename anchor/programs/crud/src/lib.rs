@@ -37,7 +37,12 @@ pub mod crud {
 
     pub fn delete_journal_entry(
         ctx: Context<DeleteEntry>,
+        title: String,
+        message: String,
     ) -> Result<()> {
+        let journal_entry = &mut ctx.accounts.journal_entry;
+        journal_entry.title = title;
+        journal_entry.message = message;
         Ok(())
     }
 }
@@ -79,7 +84,17 @@ pub struct UpdateEntry<'info> {
 
 #[derive(Accounts)]
 #[instruction(title: String)]
-pub struct DeleteEntry<'info> {}
+pub struct DeleteEntry<'info> {
+    #[account(
+        close = owner,
+        seeds = [title.as_bytes(), owner.key().as_ref()],
+        bump,
+    )]
+    pub journal_entry: Account<'info, JournalEntrySpace>,
+    #[account(mut)]
+    pub owner: Signer<'info>,
+    pub system_program: Program<'info, System>,
+}
 
 
 
