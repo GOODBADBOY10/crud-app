@@ -36,13 +36,9 @@ pub mod crud {
     }
 
     pub fn delete_journal_entry(
-        ctx: Context<DeleteEntry>,
-        title: String,
-        message: String,
+        _ctx: Context<DeleteEntry>,
+        _title: String,
     ) -> Result<()> {
-        let journal_entry = &mut ctx.accounts.journal_entry;
-        journal_entry.title = title;
-        journal_entry.message = message;
         Ok(())
     }
 }
