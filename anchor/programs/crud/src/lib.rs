@@ -51,8 +51,8 @@ pub struct CreateEntry<'info> {
 #[derive(InitSpace)]
 pub struct JournalEntrySpace {
     pub owner: Pubkey,
-    #[max_len(20)]
+    #[max_len(40)]
     pub title: String,
-    #[max_len(50)]
+    #[max_len(200)]
     pub message: String,
 }
