@@ -43,3 +43,22 @@ next-env.d.ts
 # anchor build artifacts
 /anchor/.anchor/
 /anchor/target/
+test-ledger/
+anchor/test-ledger/
+# Solana
+test-ledger/
+.anchor/
+target/
+**/*.so
+
+# Logs
+*.log
+
+# Node
+node_modules/
+dist/
+
+# IDL
+**/*.json
+!package.json
+!tsconfig.json
