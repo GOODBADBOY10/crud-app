@@ -1,18 +1,23 @@
-"use client";
-// import { useWalletConnection } from "@solana/react-hooks";
-// import { VaultCard } from "./components/vault-card";
+import { JournalCard } from './components/journal-card';
 
-export default function Home() {
-  // const { connectors, connect, disconnect, wallet, status } =
-    // useWalletConnection();
-
-  // const address = wallet?.account.address.toString();
-
+export default function Page() {
   return (
-    <>
-    <div className="">
-      <h1>CRUP APP FOR LEARNING</h1>
+    <div className="min-h-screen">
+      <div className="hero py-12 bg-base-200">
+        <div className="hero-content text-center">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl font-bold">Journal dApp</h1>
+            <p className="py-6 text-lg">
+              Create, update, and manage your personal journal entries on the Solana blockchain.
+              All entries are stored securely and owned by you.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="max-w-4xl mx-auto p-6">
+        <JournalCard />
+      </div>
     </div>
-    </>
   );
 }
