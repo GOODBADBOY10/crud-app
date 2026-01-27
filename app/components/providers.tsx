@@ -11,5 +11,7 @@ const client = createClient({
 });
 
 export function Providers({ children }: PropsWithChildren) {
-  return <SolanaProvider client={client}>{children}</SolanaProvider>;
+  return <SolanaProvider client={client}>
+    {children}
+    </SolanaProvider>;
 }
