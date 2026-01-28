@@ -72,9 +72,9 @@ export function VaultCard() {
       const instruction = {
         programAddress: VAULT_PROGRAM_ADDRESS,
         accounts: [
-          { address: walletAddress, role: 3 }, // WritableSigner (3 = writable + signer)
-          { address: vaultAddress, role: 1 }, // Writable (1 = writable)
-          { address: SYSTEM_PROGRAM_ADDRESS, role: 0 }, // Readonly (0 = readonly)
+          { address: walletAddress, role: 3 },
+          { address: vaultAddress, role: 1 },
+          { address: SYSTEM_PROGRAM_ADDRESS, role: 0 },
         ],
         data: getDepositInstructionDataEncoder().encode({
           amount: depositAmount,
